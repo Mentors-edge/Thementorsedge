@@ -3,107 +3,242 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mentors Edge | Our Team</title>
-  <meta name="description" content="Meet the mentors at Mentors Edge — Where ambitions meet guidance." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {font-family: Inter, sans-serif; margin:0; background:#f7faff; color:#0f172a; position:relative;}
-    header {background:#fff; border-bottom:1px solid #e5eaf5; padding:1rem 2rem; position:sticky; top:0; z-index:10;}
-    header h1 {margin:0; font-size:1.25rem; color:#0a2f6b;}
-    .container {width:min(1200px,90%); margin:auto;}
-    h2 {font-size:2rem; margin:1rem 0; color:#1149aa;}
-    p {color:#475569;}
-    .grid {display:grid; gap:1.5rem; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); margin:2rem 0;}
-    .card {background:#fff; border:1px solid #e2e8f0; border-radius:1rem; box-shadow:0 6px 16px rgba(0,0,0,.06); overflow:hidden; transition:.2s; position:relative;}
-    .card:hover {transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.1);}
-
-    .portrait {aspect-ratio:4/3; overflow:hidden; position:relative;}
-    .portrait img {width:100%; height:100%; object-fit:cover; display:block;}
-
-    /* Animated Artworks */
-    .artwork {position:absolute; bottom:-20px; right:-20px; width:70px; height:70px; background:radial-gradient(circle at 30% 30%, #90c2ff 0%, #1f6bff 70%); border-radius:50%; opacity:0.28; filter:saturate(110%); animation: floatY 6s ease-in-out infinite, spin 18s linear infinite;}
-    .artwork::before, .artwork::after {content:""; position:absolute; border-radius:50%; opacity:.18;}
-    .artwork::before {width:110px; height:110px; left:-40px; top:-30px; background:radial-gradient(circle at 70% 40%, #b5d6ff 0%, #90c2ff 80%); animation: drift 9s ease-in-out infinite alternate;}
-    .artwork::after {width:90px; height:90px; right:-20px; bottom:-25px; background:radial-gradient(circle at 40% 60%, #cfe2ff 0%, #90c2ff 85%); animation: drift 12s ease-in-out infinite alternate-reverse;}
-
-    @keyframes floatY { 0%{ transform:translateY(0)} 50%{ transform:translateY(-8px)} 100%{ transform:translateY(0)} }
-    @keyframes drift   { 0%{ transform:translate(0,0)} 100%{ transform:translate(10px,-10px)} }
-    @keyframes spin    { 0%{ transform:rotate(0deg)} 100%{ transform:rotate(360deg)} }
-
-    /* Footer decorative orbits */
-    footer {background:#f2f6ff; padding:1rem 2rem; text-align:center; border-top:1px solid #e2e8f0; margin-top:2rem; position:relative; overflow:hidden;}
-    footer .tagline {font-weight:600; color:#0a2f6b;}
-    footer::before, footer::after {content:""; position:absolute; border-radius:50%; opacity:0.12;}
-    footer::before {top:-30px; left:-30px; width:120px; height:120px; background:linear-gradient(135deg,#1149aa,#90c2ff); animation: orbit 28s linear infinite;}
-    footer::after  {bottom:-40px; right:-40px; width:160px; height:160px; background:linear-gradient(135deg,#1f6bff,#90c2ff); animation: orbit 36s linear infinite reverse;}
-
-    @keyframes orbit { from { transform:rotate(0deg) translateX(8px) rotate(0deg);} to { transform:rotate(360deg) translateX(8px) rotate(-360deg);} }
-
-    /* Respect users who prefer reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      .artwork, .artwork::before, .artwork::after, footer::before, footer::after { animation: none !important; }
+  <title>Our Team • The Mentors Edge</title>
+  <meta name="description" content="Meet the mentors at The Mentors Edge – Where ambitions meet guidance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            meblue: {
+              50: '#eef6ff',
+              100: '#d9ebff',
+              200: '#b6d7ff',
+              300: '#8cbfff',
+              400: '#5a9eff',
+              500: '#2f7dff',
+              600: '#1f61db',
+              700: '#184bb0',
+              800: '#173f8d',
+              900: '#14366f'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(23, 63, 141, 0.08)'
+          },
+          keyframes: {
+            floaty: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' }
+            },
+            fadeUp: {
+              '0%': { opacity: 0, transform: 'translateY(12px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' }
+            }
+          },
+          animation: {
+            floaty: 'floaty 8s ease-in-out infinite',
+            fadeUp: 'fadeUp 700ms ease forwards'
+          }
+        }
+      }
     }
-
-    .content {padding:1rem;}
-    .name {font-weight:700; font-size:1.1rem; margin:0.25rem 0;}
-    .role {color:#1149aa; font-weight:600; font-size:0.95rem;}
+  </script>
+  <style>
+    html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
+    .tilt:hover { transform: translateY(-6px) rotate3d(1,1,0,0.6deg); }
   </style>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Mentors Edge — Our Team</h1>
+<body class="bg-white text-slate-800">
+  <!-- Decorative background blobs -->
+  <div class="fixed -z-10 inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-24 -left-24 w-72 h-72 bg-meblue-100 rounded-full blur-3xl opacity-70 animate-floaty"></div>
+    <div class="absolute -bottom-24 -right-24 w-80 h-80 bg-meblue-200 rounded-full blur-3xl opacity-60 animate-floaty" style="animation-delay:1.5s"></div>
+  </div>
+
+  <!-- Top Bar (optional; mirrors contact page style) -->
+  <div class="w-full bg-meblue-900 text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-6">
+        <a href="tel:+919072710717" class="hover:underline">📞 +91 9072 710717</a>
+        <a href="tel:+919447499818" class="hover:underline">📞 +91 9447 499818</a>
+        <a href="mailto:contact@thementorsedge.in" class="hover:underline">✉️ contact@thementorsedge.in</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://thementorsedge.in/" class="hover:underline">Home</a>
+        <a href="https://www.instagram.com/the_mentors_edge" target="_blank" rel="noopener" class="hover:underline">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden bg-gradient-to-br from-meblue-50 via-white to-meblue-100">
+    <div class="max-w-7xl mx-auto px-4 py-16 md:py-20">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-meblue-900 leading-tight">Meet our mentors</h1>
+          <p class="mt-4 text-lg text-slate-700">Qualified CAs and industry mentors guiding you through CA Inter (and support for CA Final) with structured teaching, evaluations, and personal mentorship.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://wa.me/919072710717?text=Hi%20Mentors%20Edge%2C%20I%27d%20like%20to%20know%20about%20faculty%20and%20batches." class="inline-flex items-center gap-2 rounded-2xl bg-meblue-600 hover:bg-meblue-700 text-white px-5 py-3 shadow-soft transition">Chat on WhatsApp</a>
+            <a href="mailto:contact@thementorsedge.in?subject=Faculty%20Enquiry" class="inline-flex items-center gap-2 rounded-2xl border border-meblue-300 text-meblue-800 hover:bg-meblue-50 px-5 py-3 transition">Email us</a>
+          </div>
+        </div>
+        <div class="relative hidden md:block">
+          <svg viewBox="0 0 400 300" class="w-full h-auto drop-shadow-xl" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#8cbfff"/>
+                <stop offset="100%" stop-color="#2f7dff"/>
+              </linearGradient>
+            </defs>
+            <g fill="url(#g1)">
+              <rect x="20" y="40" width="120" height="80" rx="16" opacity="0.35"></rect>
+              <rect x="160" y="20" width="220" height="120" rx="20" opacity="0.6"></rect>
+              <rect x="60" y="140" width="280" height="120" rx="24" opacity="0.9"></rect>
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <h2>Our Mentors</h2>
-    <p>Meet our dedicated mentors who guide students in their CA journey with expertise and passion.</p>
-
-    <div class="grid">
-      <div class="card">
-        <div class="portrait"><img src="assets/ameer_new.jpg" alt="CA Ameer Faiz"><div class="artwork" aria-hidden="true"></div></div>
-        <div class="content">
-          <div class="name">CA Ameer Faiz</div>
-          <div class="role">Chartered Accountant</div>
-          <p>5 years of experience in teaching. Faculty for FR, Advanced Accounts, and Direct Tax.</p>
-        </div>
+  <!-- Team Grid -->
+  <main class="py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-6 flex flex-wrap items-center gap-3">
+        <span class="text-sm text-slate-600">Areas of expertise filters:</span>
+        <button data-filter="all" class="filter-btn text-sm rounded-full border px-3 py-1 hover:bg-meblue-50">All</button>
+        <button data-filter="FR" class="filter-btn text-sm rounded-full border px-3 py-1 hover:bg-meblue-50">FR</button>
+        <button data-filter="Adv Accounts" class="filter-btn text-sm rounded-full border px-3 py-1 hover:bg-meblue-50">Adv Accounts</button>
+        <button data-filter="Direct Tax" class="filter-btn text-sm rounded-full border px-3 py-1 hover:bg-meblue-50">Direct Tax</button>
+        <button data-filter="Costing" class="filter-btn text-sm rounded-full border px-3 py-1 hover:bg-meblue-50">Costing</button>
+        <button data-filter="FM" class="filter-btn text-sm rounded-full border px-3 py-1 hover:bg-meblue-50">FM</button>
+        <button data-filter="Law" class="filter-btn text-sm rounded-full border px-3 py-1 hover:bg-meblue-50">Law</button>
+        <button data-filter="Indirect Tax" class="filter-btn text-sm rounded-full border px-3 py-1 hover:bg-meblue-50">Indirect Tax</button>
+        <button data-filter="Strategic Management" class="filter-btn text-sm rounded-full border px-3 py-1 hover:bg-meblue-50">Strategic Management</button>
       </div>
 
-      <div class="card">
-        <div class="portrait"><img src="assets/cyril.JPG" alt="CA Cyril Varghese"><div class="artwork" aria-hidden="true"></div></div>
-        <div class="content">
-          <div class="name">CA Cyril Varghese</div>
-          <div class="role">Chartered Accountant</div>
-          <p>Faculty for Costing and Financial Management.</p>
-        </div>
+      <div id="teamGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card: Ameer -->
+        <article class="team-card group tilt rounded-2xl bg-white border border-slate-200 shadow-soft p-5 transition will-change-transform" data-tags="FR,Adv Accounts,Direct Tax">
+          <div class="relative overflow-hidden rounded-xl">
+            <img src="assets/ameer_new.jpg" alt="CA Ameer Faiz" class="w-full h-64 object-cover object-center group-hover:scale-105 transition" loading="lazy" />
+          </div>
+          <div class="mt-4">
+            <h3 class="text-xl font-bold text-meblue-900">CA Ameer Faiz</h3>
+            <p class="text-sm text-slate-600">Chartered Accountant • 5 years of experience in teaching</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="badge">FR</span>
+              <span class="badge">Adv Accounts</span>
+              <span class="badge">Direct Tax</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Cyril -->
+        <article class="team-card group tilt rounded-2xl bg-white border border-slate-200 shadow-soft p-5 transition" data-tags="Costing,FM">
+          <div class="relative overflow-hidden rounded-xl">
+            <img src="assets/cyril.JPG" alt="CA Cyril Varghese" class="w-full h-64 object-cover object-center group-hover:scale-105 transition" loading="lazy" />
+          </div>
+          <div class="mt-4">
+            <h3 class="text-xl font-bold text-meblue-900">CA Cyril Varghese</h3>
+            <p class="text-sm text-slate-600">Chartered Accountant • Mentor</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="badge">Costing</span>
+              <span class="badge">FM</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Aswathi -->
+        <article class="team-card group tilt rounded-2xl bg-white border border-slate-200 shadow-soft p-5 transition" data-tags="Law,Indirect Tax">
+          <div class="relative overflow-hidden rounded-xl">
+            <img src="assets/aswathi.JPG" alt="CA Aswathi C K" class="w-full h-64 object-cover object-center group-hover:scale-105 transition" loading="lazy" />
+          </div>
+          <div class="mt-4">
+            <h3 class="text-xl font-bold text-meblue-900">CA Aswathi C K</h3>
+            <p class="text-sm text-slate-600">Chartered Accountant</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="badge">Law</span>
+              <span class="badge">Indirect Tax</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Sarath -->
+        <article class="team-card group tilt rounded-2xl bg-white border border-slate-200 shadow-soft p-5 transition" data-tags="Strategic Management">
+          <div class="relative overflow-hidden rounded-xl">
+            <img src="assets/sarath.JPG" alt="Mr. Sarath Krishnan" class="w-full h-64 object-cover object-center group-hover:scale-105 transition" loading="lazy" />
+          </div>
+          <div class="mt-4">
+            <h3 class="text-xl font-bold text-meblue-900">Mr. Sarath Krishnan</h3>
+            <p class="text-sm text-slate-600">CA Finalist</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="badge">Strategic Management</span>
+            </div>
+          </div>
+        </article>
       </div>
 
-      <div class="card">
-        <div class="portrait"><img src="assets/aswathi.JPG" alt="CA Aswathi CK"><div class="artwork" aria-hidden="true"></div></div>
-        <div class="content">
-          <div class="name">CA Aswathi CK</div>
-          <div class="role">Chartered Accountant</div>
-          <p>Faculty for Law and Indirect Tax.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="portrait"><img src="assets/sarath.JPG" alt="Mr. Sarath Krishnan"><div class="artwork" aria-hidden="true"></div></div>
-        <div class="content">
-          <div class="name">Mr. Sarath Krishnan</div>
-          <div class="role">CA Finalist</div>
-          <p>Faculty for Strategic Management.</p>
-        </div>
+      <!-- CTA -->
+      <div class="mt-12 text-center">
+        <a href="https://wa.me/919072710717?text=Hi%20Mentors%20Edge%2C%20please%20share%20batch%20details%20and%20fees." class="inline-flex items-center gap-2 rounded-2xl bg-meblue-600 hover:bg-meblue-700 text-white px-6 py-3 font-medium shadow-soft">Ask about batches & fees</a>
       </div>
     </div>
   </main>
 
-  <footer>
-    <div class="tagline">Where ambitions meet guidance</div>
-    <div class="small">© <span id="year"></span> Mentors Edge. All rights reserved.</div>
+  <!-- Footer -->
+  <footer class="bg-meblue-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-6">
+      <div>
+        <h5 class="text-lg font-semibold">The Mentors Edge</h5>
+        <p class="text-meblue-100 mt-2">Where ambitions meet guidance.</p>
+      </div>
+      <div class="md:text-right">
+        <p class="text-meblue-100">© <span id="year"></span> Mentors Edge. All rights reserved.</p>
+        <p class="text-meblue-200 text-sm mt-1"><a href="#" class="underline">Privacy</a> · <a href="#" class="underline">Terms</a> · <a href="mailto:contact@thementorsedge.in" class="underline">Contact</a></p>
+      </div>
+    </div>
   </footer>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Badge styling
+    document.querySelectorAll('.badge').forEach(b => {
+      b.classList.add('text-xs','px-2','py-1','rounded-full','bg-meblue-50','text-meblue-800','border','border-meblue-200');
+    });
+
+    // Appear on scroll
+    const cards = document.querySelectorAll('.team-card');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-fadeUp'); io.unobserve(e.target); } });
+    }, { threshold: 0.2 });
+    cards.forEach(c => io.observe(c));
+
+    // Simple filter by expertise
+    const buttons = document.querySelectorAll('.filter-btn');
+    const grid = document.getElementById('teamGrid');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      const tag = btn.getAttribute('data-filter');
+      cards.forEach(card => {
+        const tags = card.getAttribute('data-tags')?.split(',') || [];
+        if (tag === 'all' || tags.map(t=>t.trim()).includes(tag)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      // Visual active state
+      buttons.forEach(b => b.classList.remove('bg-meblue-600','text-white'));
+      btn.classList.add('bg-meblue-600','text-white');
+    }));
+  </script>
 </body>
 </html>
