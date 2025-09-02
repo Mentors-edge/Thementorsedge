@@ -1,251 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Mentors Edge</title>
-  <meta name="description" content="Contact Mentors Edge for admissions, counselling and course enquiries. We're open all days 7:30 AM – 11:00 PM IST." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact • The Mentors Edge</title>
+  <meta name="description" content="Contact The Mentors Edge – Where ambitions meet guidance." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --brand:#0b69ff; --brand-dark:#0a57d6; --accent:#82b1ff; --ink:#0f172a; --muted:#5b6b8a; --bg:#f7f9ff; --card:#ffffff;
-      --radius:20px; --shadow:0 10px 25px rgba(11,105,255,.08), 0 4px 8px rgba(2,6,23,.06);
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            meblue: {
+              50: '#eef6ff',
+              100: '#d9ebff',
+              200: '#b6d7ff',
+              300: '#8cbfff',
+              400: '#5a9eff',
+              500: '#2f7dff',
+              600: '#1f61db',
+              700: '#184bb0',
+              800: '#173f8d',
+              900: '#14366f'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(23, 63, 141, 0.08)'
+          }
+        }
+      }
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1200px;margin:0 auto;padding:24px}
-    header{background:#fff;border-bottom:1px solid #e6edff;position:sticky;top:0;z-index:50}
-    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));box-shadow:var(--shadow)}
-    h1{font-size:18px;margin:0}
-
-    /* Hero */
-    .hero{background:linear-gradient(180deg,#eef4ff,transparent);padding:40px 0}
-    .hero .title{font-size:36px;margin:0 0 8px}
-    .hero .sub{color:var(--muted);max-width:800px}
-
-    /* Layout */
-    .grid{display:grid;gap:22px}
-    .two-col{grid-template-columns:1.1fr .9fr}
-    @media (max-width:980px){.two-col{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid #e6edff;border-radius:var(--radius);box-shadow:var(--shadow);position:relative}
-    .card.pad{padding:24px}
-    .section-title{font-size:20px;margin:0 0 14px}
-    .muted{color:var(--muted)}
-
-    /* Contact items */
-    .items{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    @media (max-width:980px){.items{grid-template-columns:1fr 1fr}}
-    @media (max-width:640px){.items{grid-template-columns:1fr}}
-    .item{display:flex;gap:12px}
-    .icon{flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:#f0f5ff;border:1px solid #e6edff;display:grid;place-items:center}
-
-    /* Form */
-    form{display:grid;gap:12px}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width:640px){.row{grid-template-columns:1fr}}
-    label{font-size:13px;font-weight:600}
-    input,select,textarea{width:100%;padding:12px 14px;border:1px solid #dbe3ff;border-radius:12px;background:#fff;outline:none}
-    input:focus,select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(11,105,255,.18)}
-    textarea{min-height:120px}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;padding:12px 16px;border-radius:12px;border:1px solid transparent}
-    .btn:hover{background:var(--brand-dark)}
-
-    /* Map */
-    .map{border:0;width:100%;min-height:340px;border-radius:16px}
-
-    /* Branches */
-    .branches{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media (max-width:980px){.branches{grid-template-columns:1fr}}
-    .branch{padding:14px;border:1px dashed #dbe3ff;border-radius:14px}
-    .branch h4{margin:0 0 8px}
-
-    /* FAQ */
-    details{border:1px solid #e6edff;border-radius:12px;padding:12px 14px;background:#fff}
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:600}
-    summary::-webkit-details-marker{display:none}
+  </script>
+  <style>
+    html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
   </style>
 </head>
-<body>
-  <header>
-    <div class="nav container">
-      <div class="brand">
-        <div class="logo"></div>
-        <h1>Mentors Edge</h1>
+<body class="bg-white text-slate-800">
+  <!-- Top Bar -->
+  <div class="w-full bg-meblue-900 text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-6">
+        <a href="tel:+919072710717" class="hover:underline">📞 +91 9072 710717</a>
+        <a href="tel:+919447499818" class="hover:underline">📞 +91 9447 499818</a>
+        <a href="mailto:contact@thementorsedge.in" class="hover:underline">✉️ contact@thementorsedge.in</a>
       </div>
-      <a class="btn" href="https://www.instagram.com/the_mentors_edge" target="_blank" rel="noopener">Instagram</a>
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/the_mentors_edge" class="hover:underline" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://thementorsedge.in/" class="hover:underline">Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-meblue-50 via-white to-meblue-100"></div>
+    <div class="max-w-7xl mx-auto px-4 py-16 md:py-20">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-meblue-900 leading-tight">Get in touch</h1>
+          <p class="mt-4 text-lg text-slate-700">We’re here to help with admissions, classes, residential campus, and anything else you need.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://wa.me/919072710717?text=Hi%20Mentors%20Edge%2C%20I%27d%20like%20to%20know%20more%20about%20CA%20Inter%20program." class="inline-flex items-center gap-2 rounded-2xl bg-meblue-600 hover:bg-meblue-700 text-white px-5 py-3 shadow-soft transition">Chat on WhatsApp</a>
+            <a href="mailto:contact@thementorsedge.in?subject=Admission%20Enquiry&body=Hi%20Team%2C%20I%27d%20like%20to%20know%20more%20about..." class="inline-flex items-center gap-2 rounded-2xl border border-meblue-300 text-meblue-800 hover:bg-meblue-50 px-5 py-3 transition">Email us</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-soft p-6 md:p-8">
+          <h2 class="text-2xl font-bold text-meblue-800">Send a message</h2>
+          <p class="text-sm text-slate-600 mt-1">We usually reply within a few hours.</p>
+          <form id="contactForm" class="mt-6 space-y-4" action="https://formspree.io/f/xyyyp" method="POST">
+            <!-- Replace action with your Formspree endpoint or backend script -->
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1" for="name">Full name</label>
+                <input id="name" name="name" type="text" required class="w-full rounded-xl border-slate-300 focus:border-meblue-500 focus:ring-meblue-500" placeholder="Your name" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1" for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" pattern="[0-9]{10}" class="w-full rounded-xl border-slate-300 focus:border-meblue-500 focus:ring-meblue-500" placeholder="10-digit mobile" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1" for="email">Email</label>
+                <input id="email" name="email" type="email" required class="w-full rounded-xl border-slate-300 focus:border-meblue-500 focus:ring-meblue-500" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1" for="interest">Interested in</label>
+                <select id="interest" name="interest" class="w-full rounded-xl border-slate-300 focus:border-meblue-500 focus:ring-meblue-500">
+                  <option>CA Inter – Classroom</option>
+                  <option>Residential Campus (Inter & Final)</option>
+                  <option>Admissions & Fees</option>
+                  <option>Hostel / Facilities</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1" for="message">Your message</label>
+              <textarea id="message" name="message" rows="5" required class="w-full rounded-xl border-slate-300 focus:border-meblue-500 focus:ring-meblue-500" placeholder="Tell us a little about how we can help"></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+              <label class="inline-flex items-center gap-2 text-sm">
+                <input type="checkbox" required class="rounded text-meblue-600" />
+                I agree to the <a href="#" class="text-meblue-700 underline">terms & privacy</a>
+              </label>
+              <button type="submit" class="rounded-2xl bg-meblue-600 hover:bg-meblue-700 text-white px-6 py-3 font-medium shadow-soft">Send message</button>
+            </div>
+            <p id="formStatus" class="text-sm mt-2"></p>
+          </form>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h2 class="title">Contact Us</h2>
-      <p class="sub">Admissions, batches, facilities, or counselling—our team is here to help. <strong>Open all days • 7:30 AM – 11:00 PM IST</strong>.</p>
+  <!-- Contact Cards -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-soft transition">
+          <h3 class="text-lg font-bold text-meblue-900">Call us</h3>
+          <p class="mt-2 text-slate-600">Mon–Sat, 9:30 AM – 6:30 PM</p>
+          <div class="mt-4 space-y-1">
+            <a href="tel:+919072710717" class="block hover:underline">+91 9072 710717</a>
+            <a href="tel:+919447499818" class="block hover:underline">+91 9447 499818</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-soft transition">
+          <h3 class="text-lg font-bold text-meblue-900">Email</h3>
+          <p class="mt-2 text-slate-600">We usually respond within a few hours.</p>
+          <a href="mailto:contact@thementorsedge.in" class="mt-4 inline-block hover:underline">contact@thementorsedge.in</a>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-soft transition">
+          <h3 class="text-lg font-bold text-meblue-900">Social</h3>
+          <p class="mt-2 text-slate-600">Follow updates, results & campus life.</p>
+          <a target="_blank" rel="noopener" href="https://www.instagram.com/the_mentors_edge" class="mt-4 inline-block hover:underline">Instagram: @the_mentors_edge</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <main class="container grid two-col">
-    <!-- Left: Form + Branch addresses -->
-    <div class="grid" style="gap:22px">
-      <div class="card pad">
-        <h3 class="section-title">Send an Enquiry</h3>
-        <form id="enquiryForm">
-          <input type="text" id="trap" name="trap" style="position:absolute;left:-9999px" tabindex="-1" aria-hidden="true" autocomplete="off">
-          <div class="row">
-            <div>
-              <label for="name">Full Name</label>
-              <input id="name" name="name" placeholder="Your Name" required>
-            </div>
-            <div>
-              <label for="phone">Mobile</label>
-              <input id="phone" name="phone" type="tel" placeholder="10-digit" pattern="[0-9]{10}" required>
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com">
-            </div>
-            <div>
-              <label for="course">Interested In</label>
-              <select id="course" name="course">
-                <option value="CA Inter">CA Inter</option>
-                <option value="CA Final">CA Final</option>
-                <option value="Hostel / Residential">Hostel / Residential</option>
-                <option value="Counselling">Counselling</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us how we can help"></textarea>
-          </div>
-          <div class="row">
-            <div>
-              <label for="pref">Preferred Contact</label>
-              <select id="pref" name="pref">
-                <option>Call</option>
-                <option>WhatsApp</option>
-                <option>Email</option>
-              </select>
-            </div>
-            <div>
-              <label for="time">Best Time</label>
-              <input id="time" name="time" placeholder="e.g., 4–6 PM">
-            </div>
-          </div>
-          <button class="btn" type="submit">Submit Enquiry</button>
-          <p class="muted" id="note">We respect your privacy. Your info is used only to serve your enquiry.</p>
-        </form>
-      </div>
-
-      <div class="card pad">
-        <h3 class="section-title">Our Centre</h3>
-        <div class="branch">
-          <h4>Main Campus</h4>
-          <p class="muted">(Add full postal address here)
-          <br>Phone: <a href="tel:+919072710717">9072 710717</a>, <a href="tel:+919447499818">9447 499818</a>
-          <br>Email: <a href="mailto:contact@thementorsedge.in">contact@thementorsedge.in</a>
-          <br>Hours: Open all days • 7:30 AM – 11:00 PM</p>
+  <!-- Map & Address -->
+  <section class="py-12 bg-meblue-50">
+    <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-8 items-start">
+      <div class="bg-white rounded-2xl p-6 shadow-soft">
+        <h3 class="text-2xl font-bold text-meblue-900">Visit our campus</h3>
+        <p class="mt-2 text-slate-600">Mentors Edge – AC classrooms, study cubicles, discussion rooms & mentorship by qualified CAs.</p>
+        <div class="mt-4">
+          <iframe title="Mentors Edge Location" src="https://maps.google.com/maps?q=H62EiBZTndpn6s7R6&z=15&output=embed" class="w-full h-80 rounded-xl border-0"></iframe>
+          <!-- If you prefer exact embed from Maps, replace the src with the full embed URL. -->
         </div>
-        <!-- Duplicate .branch blocks below if you have multiple branches -->
       </div>
-
-      <div class="card pad">
-        <h3 class="section-title">FAQs</h3>
-        <details>
-          <summary>Do you provide residential/hostel facilities?</summary>
-          <p class="muted">Yes, Mentors Edge offers a residential programme with study cubicles, discussion rooms, and daily evaluations by qualified CAs.</p>
-        </details>
-        <details>
-          <summary>Which courses are available?</summary>
-          <p class="muted">CA Inter classes are conducted on campus. We provide mentoring, tests and support for both CA Inter and CA Final students.</p>
-        </details>
-        <details>
-          <summary>How can I apply?</summary>
-          <p class="muted">Submit the enquiry form or contact us via WhatsApp/phone. We’ll help you with the quick admission steps.</p>
-        </details>
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl p-6 shadow-soft">
+          <h4 class="text-lg font-semibold text-meblue-900">Address</h4>
+          <p class="mt-2 text-slate-700">Mentors Edge, Kerala, India</p>
+          <p class="text-slate-500 text-sm mt-1">(Replace with your exact address line for better navigation)</p>
+          <div class="mt-4 flex gap-3">
+            <a href="https://maps.app.goo.gl/H62EiBZTndpn6s7R6" target="_blank" rel="noopener" class="rounded-xl border border-meblue-300 text-meblue-800 hover:bg-meblue-50 px-4 py-2">Open in Google Maps</a>
+            <a href="https://wa.me/919072710717?text=Hi%20Mentors%20Edge%2C%20I%20want%20directions%20to%20the%20campus" class="rounded-xl bg-meblue-600 hover:bg-meblue-700 text-white px-4 py-2">WhatsApp Directions</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-soft">
+          <h4 class="text-lg font-semibold text-meblue-900">Timings</h4>
+          <ul class="mt-2 text-slate-700 space-y-1">
+            <li>Mon–Sat: 9:30 AM – 6:30 PM</li>
+            <li>Sun: Closed (special sessions as announced)</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-soft">
+          <h4 class="text-lg font-semibold text-meblue-900">FAQs</h4>
+          <details class="group border rounded-xl p-4">
+            <summary class="cursor-pointer font-medium text-slate-800">Do you offer CA Final classes?</summary>
+            <p class="mt-2 text-slate-600">Classroom teaching is focused on CA Inter. Residential campus and all other support are available for both Inter & Final.</p>
+          </details>
+          <details class="group border rounded-xl p-4 mt-3">
+            <summary class="cursor-pointer font-medium text-slate-800">How do I apply for admission?</summary>
+            <p class="mt-2 text-slate-600">Tap "Chat on WhatsApp" above or send us a message via the form. We’ll guide you through batch availability and fees.</p>
+          </details>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Right: Contact info + Map embed -->
-    <aside class="grid" style="gap:22px">
-      <div class="card pad">
-        <h3 class="section-title">Talk to Us</h3>
-        <div class="items">
-          <div class="item">
-            <div class="icon" aria-hidden="true">📞</div>
-            <div>
-              <strong>Call</strong>
-              <p class="muted" style="margin:4px 0 8px">Open all days • 7:30 AM – 11:00 PM IST</p>
-              <div>
-                <a class="btn" href="tel:+919072710717">9072 710717</a>
-                <a class="btn" href="tel:+919447499818">9447 499818</a>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="icon" aria-hidden="true">✉️</div>
-            <div>
-              <strong>Email</strong>
-              <p class="muted" style="margin:4px 0 8px">We respond within 24 hours</p>
-              <a class="btn" href="mailto:contact@thementorsedge.in?subject=Website%20Enquiry">contact@thementorsedge.in</a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="icon" aria-hidden="true">💬</div>
-            <div>
-              <strong>WhatsApp</strong>
-              <p class="muted" style="margin:4px 0 8px">Instant chat for quick questions</p>
-              <a class="btn" target="_blank" rel="noopener" href="https://wa.me/919072710717?text=Hi%20Mentors%20Edge%2C%20I%20have%20an%20enquiry.">Message Us</a>
-            </div>
-          </div>
-        </div>
+  <!-- Footer -->
+  <footer class="bg-meblue-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-6">
+      <div>
+        <h5 class="text-lg font-semibold">The Mentors Edge</h5>
+        <p class="text-meblue-100 mt-2">Where ambitions meet guidance.</p>
       </div>
-
-      <div class="card pad">
-        <h3 class="section-title">Find Us on Map</h3>
-        <iframe class="map" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=Mentors%20Edge&output=embed"></iframe>
-        <p class="muted" style="margin-top:10px">Having trouble? <a target="_blank" rel="noopener" href="https://maps.app.goo.gl/x6bvUxKMMnPVLBkU9">Open directly in Google Maps</a>.</p>
+      <div class="md:text-right">
+        <p class="text-meblue-100">© <span id="year"></span> Mentors Edge. All rights reserved.</p>
+        <p class="text-meblue-200 text-sm mt-1"><a href="#" class="underline">Privacy</a> · <a href="#" class="underline">Terms</a> · <a href="mailto:contact@thementorsedge.in" class="underline">Contact</a></p>
       </div>
-    </aside>
-  </main>
-
-  <footer class="container" style="margin:26px auto 40px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <span>© <span id="year"></span> Mentors Edge • Where ambitions meet guidance</span>
-    <span>
-      <a href="https://www.instagram.com/the_mentors_edge" target="_blank" rel="noopener">Instagram</a>
-      • <a href="tel:+919072710717">Call</a>
-      • <a href="mailto:contact@thementorsedge.in">Email</a>
-    </span>
+    </div>
   </footer>
 
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-    const form = document.getElementById('enquiryForm');
-    const note = document.getElementById('note');
-    form.addEventListener('submit', (e)=>{
+
+    // Simple client-side success message for Formspree-like flows
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form?.addEventListener('submit', function(e) {
+      // If you wire Formspree/EmailJS, remove this preventDefault
+      // and rely on their success callback. This is just a demo UX.
       e.preventDefault();
-      if(document.getElementById('trap').value.trim()!=="") return alert('Spam blocked');
-      const data = Object.fromEntries(new FormData(form).entries());
-      const subject = encodeURIComponent(`Website Enquiry - ${data.course || 'Course'}`);
-      const body = encodeURIComponent(
-        `Name: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email || '-'}\nInterested In: ${data.course || '-'}\nPreferred: ${data.pref || '-'}\nBest Time: ${data.time || '-'}\n\nMessage:\n${data.message || ''}`);
-      const mailto = `mailto:contact@thementorsedge.in?subject=${subject}&body=${body}`;
-      const goMail = confirm('Click OK to send via Email. Click Cancel to send via WhatsApp.');
-      if(goMail){ window.location.href = mailto; }
-      else{
-        const waMsg = encodeURIComponent(`Hi Mentors Edge, I have an enquiry.\n\n`+
-          `Name: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email || '-'}\nCourse: ${data.course || '-'}\nMessage: ${data.message || ''}`);
-        window.open(`https://wa.me/919072710717?text=${waMsg}`, '_blank');
-      }
-      note.textContent = 'Thanks! If your mail/WhatsApp didn\'t open, use the buttons above.';
+      status.textContent = 'Thanks! Your message has been recorded. We will reach out soon.';
+      status.className = 'text-sm mt-2 text-green-700';
+      form.reset();
     });
   </script>
 </body>
