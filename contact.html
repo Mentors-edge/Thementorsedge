@@ -63,6 +63,7 @@
         <div>
           <h1 class="text-4xl md:text-5xl font-extrabold text-meblue-900 leading-tight">Get in touch</h1>
           <p class="mt-4 text-lg text-slate-700">We’re here to help with admissions, classes, residential campus, and anything else you need.</p>
+          <p class="mt-2 text-slate-700 font-medium">Open <span class="font-semibold">all days</span> • 7:30 AM – 10:00 PM IST</p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="https://wa.me/919072710717?text=Hi%20Mentors%20Edge%2C%20I%27d%20like%20to%20know%20more%20about%20CA%20Inter%20program." class="inline-flex items-center gap-2 rounded-2xl bg-meblue-600 hover:bg-meblue-700 text-white px-5 py-3 shadow-soft transition">Chat on WhatsApp</a>
             <a href="mailto:contact@thementorsedge.in?subject=Admission%20Enquiry&body=Hi%20Team%2C%20I%27d%20like%20to%20know%20more%20about..." class="inline-flex items-center gap-2 rounded-2xl border border-meblue-300 text-meblue-800 hover:bg-meblue-50 px-5 py-3 transition">Email us</a>
@@ -71,8 +72,7 @@
         <div class="bg-white rounded-3xl shadow-soft p-6 md:p-8">
           <h2 class="text-2xl font-bold text-meblue-800">Send a message</h2>
           <p class="text-sm text-slate-600 mt-1">We usually reply within a few hours.</p>
-          <form id="contactForm" class="mt-6 space-y-4" action="https://formspree.io/f/xyyyp" method="POST">
-            <!-- Replace action with your Formspree endpoint or backend script -->
+          <form id="contactForm" class="mt-6 space-y-4" action="#" method="POST">
             <div class="grid md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium mb-1" for="name">Full name</label>
@@ -123,7 +123,7 @@
       <div class="grid md:grid-cols-3 gap-6">
         <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-soft transition">
           <h3 class="text-lg font-bold text-meblue-900">Call us</h3>
-          <p class="mt-2 text-slate-600">Mon–Sat, 9:30 AM – 6:30 PM</p>
+          <p class="mt-2 text-slate-600">Open all days • 7:30 AM – 10:00 PM</p>
           <div class="mt-4 space-y-1">
             <a href="tel:+919072710717" class="block hover:underline">+91 9072 710717</a>
             <a href="tel:+919447499818" class="block hover:underline">+91 9447 499818</a>
@@ -150,8 +150,7 @@
         <h3 class="text-2xl font-bold text-meblue-900">Visit our campus</h3>
         <p class="mt-2 text-slate-600">Mentors Edge – AC classrooms, study cubicles, discussion rooms & mentorship by qualified CAs.</p>
         <div class="mt-4">
-          <iframe title="Mentors Edge Location" src="https://maps.google.com/maps?q=H62EiBZTndpn6s7R6&z=15&output=embed" class="w-full h-80 rounded-xl border-0"></iframe>
-          <!-- If you prefer exact embed from Maps, replace the src with the full embed URL. -->
+          <iframe title="Mentors Edge Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0!2d76.9!3d9.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2sin!4vXXXXXXXXXXXX" class="w-full h-80 rounded-xl border-0"></iframe>
         </div>
       </div>
       <div class="space-y-6">
@@ -160,15 +159,14 @@
           <p class="mt-2 text-slate-700">Mentors Edge, Kerala, India</p>
           <p class="text-slate-500 text-sm mt-1">(Replace with your exact address line for better navigation)</p>
           <div class="mt-4 flex gap-3">
-            <a href="https://maps.app.goo.gl/H62EiBZTndpn6s7R6" target="_blank" rel="noopener" class="rounded-xl border border-meblue-300 text-meblue-800 hover:bg-meblue-50 px-4 py-2">Open in Google Maps</a>
+            <a href="https://maps.app.goo.gl/x6bvUxKMMnPVLBkU9" target="_blank" rel="noopener" class="rounded-xl border border-meblue-300 text-meblue-800 hover:bg-meblue-50 px-4 py-2">Open in Google Maps</a>
             <a href="https://wa.me/919072710717?text=Hi%20Mentors%20Edge%2C%20I%20want%20directions%20to%20the%20campus" class="rounded-xl bg-meblue-600 hover:bg-meblue-700 text-white px-4 py-2">WhatsApp Directions</a>
           </div>
         </div>
         <div class="bg-white rounded-2xl p-6 shadow-soft">
           <h4 class="text-lg font-semibold text-meblue-900">Timings</h4>
           <ul class="mt-2 text-slate-700 space-y-1">
-            <li>Mon–Sat: 9:30 AM – 6:30 PM</li>
-            <li>Sun: Closed (special sessions as announced)</li>
+            <li>Open all days • 7:30 AM – 10:00 PM</li>
           </ul>
         </div>
         <div class="bg-white rounded-2xl p-6 shadow-soft">
@@ -201,15 +199,10 @@
   </footer>
 
   <script>
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simple client-side success message for Formspree-like flows
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
     form?.addEventListener('submit', function(e) {
-      // If you wire Formspree/EmailJS, remove this preventDefault
-      // and rely on their success callback. This is just a demo UX.
       e.preventDefault();
       status.textContent = 'Thanks! Your message has been recorded. We will reach out soon.';
       status.className = 'text-sm mt-2 text-green-700';
